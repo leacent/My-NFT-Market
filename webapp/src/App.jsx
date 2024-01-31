@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Box } from '@chakra-ui/react'
+
 import './App.css'
+import ChainIndex from './index'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>123123</div>
+      <Box bg='tomato' w='100vw' p={4} color='white'>
+        My Dapp
+      </Box>
+      <ChainIndex></ChainIndex>
     </>
   )
 }
