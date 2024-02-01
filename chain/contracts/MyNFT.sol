@@ -6,13 +6,13 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyNFT is Ownable, ERC721 {
+contract MyNFT is ERC721 {
     uint256 private _currentTokenId = 0;
 
     constructor(
         string memory _name,
         string memory _symbol
-    ) Ownable(msg.sender) ERC721(_name, _symbol) {}
+    ) ERC721(_name, _symbol) {}
 
     function mintTo(address _to) public {
         uint256 newTokenId = _getNextTokenId();

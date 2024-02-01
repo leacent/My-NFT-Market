@@ -10,13 +10,10 @@ task('deployNFT', 'Deploy My NFT')
       const name = 'LOL'
       const symbol: string = _args.symbol || 'LOL'
       const NFT = await ethers.getContractFactory('MyNFT')
+      const [owner] = await ethers.getSigners()
       const nft = await NFT.deploy(name, symbol)
 
-      // await nft.deployed()
-      const agetAddress = await nft.getAddress()
-
-      console.log('agetAddress', agetAddress)
-
+      console.log('owner', owner.address)
       console.log('NFT Deployed to :', nft.target)
       return nft.address
     }
