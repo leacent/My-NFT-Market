@@ -1,16 +1,13 @@
-import { Box } from '@chakra-ui/react'
-
 import './App.css'
-import ChainIndex from './index'
+import AccounHeader from './components/AccounHeader';
+import NFTMarketPlace from './components/NFTMarket';
 
 function App() {
   return (
-    <>
-      <Box bg='tomato' w='100vw' p={4} color='white'>
-        My Dapp
-      </Box>
-      <ChainIndex></ChainIndex>
-    </>
+    <div className='app'>
+      <AccounHeader></AccounHeader>
+      <NFTMarketPlace></NFTMarketPlace>
+    </div>
   )
 }
 

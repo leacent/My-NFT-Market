@@ -1,18 +1,19 @@
 import { http, createPublicClient } from 'viem'
 import { localhost } from 'viem/chains'
-import abi from '../abi/my-token.json';
+import tokenAbi from '../abi/my-token.json';
 
 const wagmiContract = {
-  abi,
+  abi: tokenAbi,
   address: '0x5FbDB2315678afecb367f032d93F642f64180aa3'
 }
+
 
 const client = createPublicClient({
   chain: localhost,
   transport: http(),
 })
 
-export const readContractByAddress = async (account) => {
+export const readToken = async (account) => {
   const [name, totalSupply, symbol, balanceOf, accountBalance] = await Promise.all([
     client.readContract({
       ...wagmiContract,
