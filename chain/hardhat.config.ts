@@ -8,6 +8,9 @@ require('@nomicfoundation/hardhat-chai-matchers')
 const config: HardhatUserConfig = {
   solidity: '0.8.20',
   networks: {
+    hardhat: {
+      chainId: 1337
+    },
     sepolia: {
       url: 'https://eth-sepolia.g.alchemy.com/v2/MZplpiCc0hxfezJoP8IlQj7zfEFGZk6Y',
       accounts: ['0x8f9eff6cd3d04e39538acb78824756e9a2dfefd5a88fda7d56686ca6b5b8c955']

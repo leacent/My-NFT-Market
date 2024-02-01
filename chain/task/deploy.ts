@@ -35,3 +35,11 @@ task('deployToken', 'Deploy my token')
       return myToken.target
     }
   )
+
+task('deployMarket', 'Deloy NFT MarketPlace and NFT contract, prepare some data to market')
+  .setAction(async (_args, { ethers, run }) => {
+    const NFTMarketplaceFactory = await ethers.getContractFactory('NFTMarketplace')
+    const NFTMarketplace = await NFTMarketplaceFactory.deploy()
+    // 初始化一些数据
+    console.log('NFTMarketplace deployed to ', NFTMarketplace.target)
+  })

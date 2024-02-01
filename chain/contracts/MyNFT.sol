@@ -15,13 +15,8 @@ contract MyNFT is ERC721 {
     ) ERC721(_name, _symbol) {}
 
     function mintTo(address _to) public {
-        uint256 newTokenId = _getNextTokenId();
-        _mint(_to, newTokenId);
+        _mint(_to, _currentTokenId);
         _incrementTokenId();
-    }
-
-    function _getNextTokenId() private view returns (uint256) {
-        return _currentTokenId + 1;
     }
 
     function _incrementTokenId() private {
@@ -62,5 +57,17 @@ contract MyNFT is ERC721 {
         );
 
         return string(abi.encodePacked("data:application/json;base64,", json));
+    }
+
+    function getMyNFTList (address owner) external view returns(string[] memory) {
+        string[] memory myNFTList = new string[](balanceOf(owner));
+        uint256 tokenIndex = 0;
+        for (uint256 i = 0; i < _currentTokenId; i++ ) {
+            if (ownerOf(i) == owner) {
+                myNFTList[tokenIndex] = tokenURI(i);
+                tokenIndex += 1;
+            }
+        }
+        return myNFTList;
     }
 }
