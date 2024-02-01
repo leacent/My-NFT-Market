@@ -1,0 +1,10 @@
+body {
+  background-color: #E4F2F7 !important;
+  background: linear-gradient(135deg, #E0FFFF, #FFDAB9) !important;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.nft-list {
+  border: 1px solid red;
+}

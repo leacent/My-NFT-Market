@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, extendBaseTheme } from '@chakra-ui/react'
 import App from './App.jsx'
 import './index.css'
 import '@rainbow-me/rainbowkit/styles.css';
@@ -12,7 +12,7 @@ import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 const myLocalhost = {
   ...localhost,
-  id: 31337
+  id: 1337
 }
 
 const config = getDefaultConfig({

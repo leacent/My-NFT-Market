@@ -1,11 +1,12 @@
-
+import { useAccount } from 'wagmi'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { Box, Spacer, Flex, Center } from '@chakra-ui/react'
+import { Box,Center, Spacer, Flex } from '@chakra-ui/react'
 
 const AccounHeader = () => {
-  return <Box bg='tomato' w='100vw' p={4} color='white'>
+  const { chainId } = useAccount()
+  return <Box className='header' bg='tomato' w='100vw' p={4} color='#fff'>
     <Flex>
-      <Center  w="100px" fontWeight="bold" fontSize="22px">My Dapp</Center>
+      <Center w="120px" fontWeight="bold" fontSize="18px">NFT Market</Center>
       <Spacer />
       <ConnectButton accountStatus={{
         smallScreen: 'avatar',
