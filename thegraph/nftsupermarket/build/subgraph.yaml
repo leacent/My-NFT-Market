@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: MyNFT
@@ -21,7 +21,7 @@ dataSources:
         - Transfer
       abis:
         - name: MyNFT
-          file: ./abis/MyNFT.json
+          file: MyNFT/abis/MyNFT.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -29,4 +29,4 @@ dataSources:
           handler: handleApprovalForAll
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/my-nft.ts
+      file: MyNFT/MyNFT.wasm

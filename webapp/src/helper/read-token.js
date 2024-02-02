@@ -1,5 +1,5 @@
 import { http, createPublicClient } from 'viem'
-import { localhost } from 'viem/chains'
+import { sepolia } from 'viem/chains'
 import tokenAbi from '../abi/my-token.json';
 
 const wagmiContract = {
@@ -9,7 +9,7 @@ const wagmiContract = {
 
 
 const client = createPublicClient({
-  chain: localhost,
+  chain: sepolia,
   transport: http(),
 })
 
