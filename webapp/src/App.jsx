@@ -1,16 +1,10 @@
-import AccounHeader from './components/AccounHeader';
-import MyNFT from './components/MyNFT';
-import NFTList from './components/NFTList';
-
+import { RouterProvider } from "react-router-dom";
 import './App.css'
+import routes from "./router";
 
 function App() {
   return (
-    <div className='app'>
-      <AccounHeader></AccounHeader>
-      <MyNFT></MyNFT>
-      <NFTList></NFTList>
-    </div>
+    <RouterProvider router={routes} />
   )
 }
 

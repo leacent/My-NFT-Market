@@ -22,17 +22,17 @@ const NFTList = () => {
     ]
   })
 
-  useEffect(() => {
-    console.log('nftList123', nftListObj);
-    const list = nftListObj[0]?.result || [];
-    console.log('list', list);
-    setTokenIdList(list.map(tokenURI => {
-      console.log('tokenURI', tokenURI);
-      return window.atob(tokenURI)
-    }))
-  }, [nftListObj])
+  // useEffect(() => {
+  //   console.log('nftList123', nftListObj);
+    
+  // }, [])
+  const list = nftListObj[0]?.result || [];
+  list.map(tokenURI => {
+    console.log('tokenURI', tokenURI);
+    return window.atob(tokenURI)
+  })
   
-  console.log('tokenIdList', tokenIdList);
+  console.log('list', list);
 
   return(
     <Box border="1px solid red">

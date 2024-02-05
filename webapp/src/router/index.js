@@ -1,9 +1,16 @@
-// import { createBrowserRouter } from "react-router-dom";
-// import Index from '../index'
+import { createBrowserRouter } from "react-router-dom";
+import Home from 'pages/Home'
+import Create from 'pages/Create'
 
-// export const routes = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: Index
-//   },
-// ]);
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: Home()
+  },
+  {
+    path: "/create",
+    element: Create()
+  },
+]);
+
+export default routes

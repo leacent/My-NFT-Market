@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Heading, Text, Tag, Box, Flex, Button, Center, Divider, Input, useSafeLayoutEffect } from "@chakra-ui/react";
-import { useAccount, useReadContracts } from 'wagmi'
+import { useAccount, useReadContracts, useSignTypedData } from 'wagmi'
 import NFTAbi from '../abi/my-nft.json'
 import { writeNFT } from '../helper'
 import { nftAddr } from '../helper/address'
+
 
 
 
