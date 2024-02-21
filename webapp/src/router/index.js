@@ -5,11 +5,11 @@ import Create from 'pages/Create'
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: Home()
+    Component: Home
   },
   {
     path: "/create",
-    element: Create()
+    Component: Create
   },
 ]);
 

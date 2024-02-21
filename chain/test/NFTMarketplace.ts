@@ -10,7 +10,7 @@ let account0: Signer
 let account1: Signer
 let account2: Signer
 const auctionPrice = ethers.parseUnits('1', 'ether')
-let listingFee: number
+let listingFee: bigint
 let address1: string
 let address0: string
 let address2: string
@@ -23,8 +23,8 @@ describe('Test the operation function of the nft market place', () => {
     [account0, account1, account2] = await ethers.getSigners()
 
     address0 = await account0.getAddress()
-    address1 = account1.getAddress()
-    address2 = account2.getAddress()
+    address1 = await account1.getAddress()
+    address2 = await account2.getAddress()
 
     const BadgeToken = await ethers.getContractFactory('MyNFT')
     nft = await BadgeToken.deploy(_name, _symbol)
@@ -37,7 +37,9 @@ describe('Test the operation function of the nft market place', () => {
   it('Should create market item successfully', async function () {
     await nft.mintTo(address0) // tokenId=1
     await nft.approve(market.target, 1)
-    await market.createMarketItem(nft.target, 1, auctionPrice, { value: listingFee })
+    await market.createMarketItem(nft.target, 1, auctionPrice, {
+      value: listingFee
+    })
 
     const items = await market.fetchMyCreatedItems()
     expect(items.length).to.be.equal(1)

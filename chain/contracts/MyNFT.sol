@@ -58,16 +58,4 @@ contract MyNFT is ERC721 {
 
         return string(abi.encodePacked("data:application/json;base64,", json));
     }
-
-    function getMyNFTList (address owner) external view returns(string[] memory) {
-        string[] memory myNFTList = new string[](balanceOf(owner));
-        uint256 tokenIndex = 0;
-        for (uint256 i = 0; i < _currentTokenId; i++ ) {
-            if (ownerOf(i) == owner) {
-                myNFTList[tokenIndex] = tokenURI(i);
-                tokenIndex += 1;
-            }
-        }
-        return myNFTList;
-    }
 }
