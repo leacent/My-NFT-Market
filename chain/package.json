@@ -14,8 +14,12 @@
     "typescript": "*"
   },
   "dependencies": {
+    "@nomicfoundation/hardhat-viem": "^2.0.0",
     "@openzeppelin/contracts": "^5.0.1",
     "@openzeppelin/contracts-upgradeable": "^5.0.1",
-    "dotenv": "^16.4.1"
+    "@uniswap/lib": "4.0.1-alpha",
+    "@uniswap/v2-core": "github:uniswap/v2-core",
+    "dotenv": "^16.4.1",
+    "viem": "^2.7.1"
   }
 }
