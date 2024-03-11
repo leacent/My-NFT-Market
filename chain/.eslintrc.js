@@ -1,34 +1,32 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "mocha": true,
-        "node": true,
+    env: {
+        browser: true,
+        es2021: true,
+        mocha: true,
+        node: true,
     },
-    "extends": ["standard-with-typescript"],
-    "overrides": [
+    extends: ["standard-with-typescript"],
+    overrides: [
         {
-            "env": {
-                "node": true
+            env: {
+                node: true,
             },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
+            files: [".eslintrc.{js,cjs}"],
+            parserOptions: {
+                sourceType: "script",
+            },
+        },
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
     },
-    "rules": {
+    rules: {
         "@typescript-eslint/no-misused-promises": [
             "error",
             {
-              "checksVoidReturn": false
-            }
-          ]
-    }
+                checksVoidReturn: false,
+            },
+        ],
+    },
 }

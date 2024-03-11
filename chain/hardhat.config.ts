@@ -2,8 +2,8 @@ import { type HardhatUserConfig } from 'hardhat/config'
 import '@nomicfoundation/hardhat-toolbox'
 import 'dotenv/config'
 import './task/deploy'
-// import './task/deployUniswapV2'
 
+import '@nomicfoundation/hardhat-foundry'
 import '@nomicfoundation/hardhat-viem'
 
 require('@nomicfoundation/hardhat-chai-matchers')

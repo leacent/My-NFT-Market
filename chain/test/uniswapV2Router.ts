@@ -46,9 +46,9 @@ describe('Test UniswapV2Router02', async () => {
     const { factory } = await loadFixture(deployFactory)
     console.log('account', account)
 
-    await myToken1.write.approve([router.address, parseInt('1000', 18)], {
-      account
-    })
+    // await myToken1.write.approve([router.address, parseInt('1000', 18)], {
+    //   account≈ç'0x694AA1769357215DE4FAC081bf1f309aDC325306'
+    // })
     // await myToken2.write.approve([router.address, parseInt('100', 18)])
 
     // await router.write.addLiquidity([myToken1.address, myToken2.address, ethers.parseUnits('1000', 18), ethers.parseUnits('100', 18), 0, 0, account, Date.now()])
