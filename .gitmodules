@@ -1,3 +1,6 @@
 [submodule "chain/lib/forge-std"]
 	path = chain/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "chain/lib/v2-core"]
+	path = chain/lib/v2-core
+	url = https://github.com/Uniswap/v2-core
