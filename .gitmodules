@@ -4,3 +4,6 @@
 [submodule "chain/lib/v2-core"]
 	path = chain/lib/v2-core
 	url = https://github.com/Uniswap/v2-core
+[submodule "chain/lib/v2-periphery"]
+	path = chain/lib/v2-periphery
+	url = https://github.com/Uniswap/v2-periphery
