@@ -1,6 +1,8 @@
 import { loadFixture } from '@nomicfoundation/hardhat-toolbox/network-helpers'
 import { expect } from 'chai'
-import hre, { ethers, viem } from 'hardhat'
+import hre from 'hardhat'
+import { parseEther, formatEther } from 'viem'
+
 import { type Bank } from '../../typechain-types'
 
 describe('Bank', function () {
@@ -22,7 +24,7 @@ describe('Bank', function () {
   it('Test bank\'s deposit function', async () => {
     const { account } = await loadFixture(getWallet)
     const { bankContract } = await loadFixture(deployBank)
-    const eth = ethers.parseEther('31.12')
+    const eth = parseEther('31.12')
     await bankContract.write.deposit([eth], {
       account
     })

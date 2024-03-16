@@ -19,11 +19,9 @@ contract Bank {
         return Balances[msg.sender];
     }
 
-    function withdraw(uint256 amount) public returns (uint256) {
-        require(Balances[msg.sender] >= amount, "Insufficient balance");
-        Balances[msg.sender] -= amount;
-        payable(msg.sender).transfer(amount);
-        return Balances[msg.sender];
+    function withdraw(uint256 amount) public OnlyAdmin returns (uint256) {
+        payable(_admin).transfer(amount);
+        return Balances[_admin];
     }
 
     function getBalance(address account) public view returns (uint256) {
